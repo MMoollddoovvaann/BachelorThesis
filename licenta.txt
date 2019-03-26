@@ -1,0 +1,41 @@
+-de ce am nevoie de o baza teoretica? x
+-ce lucrari am ales si de ce? x
+-de ce s-a pornit de la modelul unui pendul inversat? x
+-cum e abordata modelarea si controlul unui sistem de tip pendul inversat? x
+-de ce sunt relevante pentru controlul unui robot autobalansat pe 2 roti? x
+-JOE - cum si ce aduce nou, ce s-a mentinut si ce pot extrage de aici? x
+-control clasic si ce performante ofera? x
+-control avansat. x
+-controllere clasice vs control avansat: avantaje si dezavantaje. x
+-de ce s-au abordat aceste metode? x
+
+
+intrebare centrala:la ce imi foloseste sa am un model?
+sau                de ce e modelul atat de important?
+sau 		   ce imi arata modelul despre robotul pe care il modelez?
+
+-care sunt elemetele cheie ale unui model?
+-ce trebuie sa faca unmodel?
+-cum arata un model bun!?
+-cum se dezvolta un model si cum se alege complexitatea lui?
+-cum am ales eu gradele si functiile pentru estimare functiilor de transfer?
+-tool-ul ident!!!
+-tipuri de modele folosite in trecut; ss vs. tf
+-ce este o functie de transfer?
+-ce imi arata o functie de transfer despre robot si despre miscarea lui?
+-cum modelez un sistem si care sunt insuficientele unui model?
+-potrivirea dintre un model si datele achizitionate?
+-cum achizitionez date,de la cine si de ce? 
+-ce relevanta au pentru model?
+-care este diferenta dintre modelul de ordinul 2 si un model de ordin mai mare?
+-ce au preluat cei de la INTECO din cercetarile anterioare pentru dezvoltarea 
+interfetei software si cum ma ajuta pe mine asta?
+-tfeste vs modelare in spatiul starilor?
+-ce am inteles din manualul de utilizare si schemele oferite?
+-care sunt provocarile si neajunsurile utilizarii modelelor de ordinul 2 si de ce le accept?
+
+-ce este acest proiect?
+-ce am disponibil?
+-Care sunt primii pasi facuti?
+-cum am inceput?
+-ce rezultate am obtiniut?
