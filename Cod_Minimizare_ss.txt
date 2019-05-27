@@ -1,0 +1,77 @@
+%% Minimase
+% THETA
+% BalredOptions
+opt = balredOptions('Offset',.0001,'StateElimMethod','MatchDC');
+% Compute second-order approximation
+Hth = tf(Hth);
+Hth = balred(Hth, 2, opt)
+compare(dataTH, Hth);
+
+% THETADOT
+% Create balredOptions
+opt = balredOptions('Offset',.001,'StateElimMethod','MatchDC');
+% Compute second-order approximation
+Hthdot = tf(Hthdot);
+Hthdot = balred(Hthdot, 2, opt)
+compare(dataTHdot, Hthdot)
+
+% PSI
+% No minimisation needed since Hps is already of second order
+
+% PSIDOT
+% BalredOptions
+opt = balredOptions('Offset',.0001,'StateElimMethod','MatchDC');
+% Compute second-order approximation
+% Hpsd36
+Hpsd36 = tf(Hpsd36);
+Hpsd36 = balred(Hpsd36, 2, opt);
+sys_Hpsd36 = idss(Hpsd36);
+sys_Hpsd36 = balred(sys_Hpsd36, 2, opt);
+[numPSd36, denPSd36] = ss2tf(sys_Hpsd36.A, sys_Hpsd36.B,...
+    sys_Hpsd36.C, sys_Hpsd36.D);
+Hpsd36 = tf(numPSd36, denPSd36, Te, 'Variable', 'z^-1')
+compare(dataPSdot, Hpsd36)
+
+% Hpsd45
+% BalredOptions
+opt = balredOptions('Offset',.0001,'StateElimMethod','MatchDC');
+% Compute second-order approximation
+% Hpsd45
+sys_Hpsd45 = idss(Hpsd45);
+sys_Hpsd45 = balred(sys_Hpsd45, 2, opt);
+[numPSd45, denPSd45] = ss2tf(sys_Hpsd45.A, sys_Hpsd45.B,...
+    sys_Hpsd45.C, sys_Hpsd45.D);
+Hpsd45 = tf(numPSd45, denPSd45, Te, 'Variable', 'z^-1')
+compare(dataPSdot, Hpsd36, Hpsd45); 
+
+% PHI
+% BalredOptions
+opt = balredOptions('Offset',.01,'StateElimMethod','MatchDC');
+% Compute second-order approximation
+%Hph35
+sys_Hph35 = idss(Hph35);
+sys_Hph35 = balred(sys_Hph35, 2, opt);
+[numPh35, denPh35] = ss2tf(sys_Hph35.A, sys_Hph35.B,...
+    sys_Hph35.C, sys_Hph35.D);
+Hph35 = tf(numPh35, denPh35, Te, 'Variable', 'z^-1')
+%compare(dataPSdot, Hph35)
+
+% Hph46
+% BalredOptions
+opt = balredOptions('Offset',.0001,'StateElimMethod','MatchDC');
+% Compute second-order approximation
+sys_Hph46 = idss(Hph46);
+sys_Hph46 = balred(sys_Hph46, 2, opt);
+[numPh46, denPh46] = ss2tf(sys_Hph46.A, sys_Hph46.B,...
+    sys_Hph46.C, sys_Hph46.D);
+Hph46 = tf(numPh46, denPh46, Te, 'Variable', 'z^-1')
+compare(dataPSdot, Hph35, Hph46); 
+
+% PHIDOT 
+% Hphd22-no minimisation necessary (already of secound order) 
+% BalredOptions
+opt = balredOptions('Offset',.01,'StateElimMethod','MatchDC');
+% Compute second-order approximation
+Hphd32=zpk(Hphd32)
+Hphd32 = balred(Hphd32, 2, opt)
+compare(dataPHId, Hphd32, Hphd22);
