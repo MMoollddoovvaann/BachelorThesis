@@ -1,0 +1,51 @@
+close all; clear all; clc;
+l = load ('bst05.mat');
+data = l.BothSt05;
+t = data.time;
+
+%% Plot Date
+left = data.signals(1).values(1:611);
+idLeft = iddata(left(1:612), u(1:612), 0.01);
+valLeft = iddata(left(612:end), u(612:end), 0.01);
+figure;
+plot (t(1:611), left); grid
+title('BothStep05 - Left')
+
+right = data.signals(1, 2).values;
+idRight = iddata(right(1:612), u(1:612), 0.01);
+valRight = iddata(right(612:end), u(612:end), 0.01);
+figure;
+plot (t, right); grid
+title('BothStep05 - Right')
+
+acceX = data.signals(1, 3).values;
+idAcceX = iddata(acceX(1:612), u(1:612), 0.01);
+valAcceX = iddata(acceX(612:end), u(612:end), 0.01);
+figure;
+plot (t, acceX); grid
+title('BothStep05 - AcceX')
+
+acceY = data.signals(1, 4).values;
+idAcceY = iddata(acceY(1:612), u(1:612), 0.01);
+valAcceY = iddata(acceY(612:end), u(612:end), 0.01);
+figure;
+plot (t, acceY); grid
+title('BothStep05 - AcceY')
+
+gyro = data.signals(1, 5).values;
+figure;
+plot (t, gyro); grid
+title('BothStep05 - Gyro')
+
+%% Identificare
+
+
+
+
+
+
+
+
+
+
+
